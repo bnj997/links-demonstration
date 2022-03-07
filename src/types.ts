@@ -23,8 +23,13 @@ export interface IThemeType {
     };
   };
 }
+export interface IClassicLinkType {
+  title: string;
+  url: string;
+}
 
 export interface IProfileType {
   name: string;
   avatar: string;
+  classLinks: Array<IClassicLinkType>;
 }
