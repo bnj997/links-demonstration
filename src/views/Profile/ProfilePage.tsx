@@ -38,6 +38,9 @@ const ProfilePage: React.FC<IProfilePageProps> = ({ profile }) => {
     return <h1>Error</h1>;
   }
 
+  /**
+   * @todo Fix the order of links being hard-coded.
+   */
   return (
     <FlexWrapper direction="column" justify="space-between">
       <Avatar name={profile.userName} avatar={profile.avatar} />
