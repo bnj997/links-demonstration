@@ -1,3 +1,20 @@
+export interface IClassicLinkType {
+  title: string;
+  url: string;
+}
+
+export interface IShowsLinkType {
+  date: string;
+  location: string;
+  url: string;
+  isSoldOut: boolean;
+}
+
+export interface IMusicLinkType {
+  name: string;
+  url: string;
+}
+
 export interface IThemeType {
   id: string;
   name: string;
@@ -24,21 +41,10 @@ export interface IThemeType {
   };
 }
 
-export interface IShowsLinkType {
-  date: string;
-  location: string;
-  url: string;
-  isSoldOut: boolean;
-}
-
-export interface IClassicLinkType {
-  title: string;
-  url: string;
-}
-
 export interface IProfileType {
   name: string;
   avatar: string;
   classLinks: Array<IClassicLinkType>;
   showsLinks: Array<IShowsLinkType>;
+  musicLinks: Array<IMusicLinkType>;
 }
