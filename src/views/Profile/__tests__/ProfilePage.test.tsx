@@ -6,9 +6,9 @@ import ProfilePage from "../ProfilePage";
 /**
  * @todo there may be a better way to mock the response. Using variables are not allowed as jest.mock is hoisted so resorted to just hard coding the response.
  */
-jest.mock("../../../utils/hooks/useFetchProfile", () => ({
-  useFetchProfile: () => ({
-    data: {
+jest.mock("../../../utils/hooks/useLinks", () => ({
+  useLinks: () => ({
+    links: {
       userId: "11111",
       name: "User theme",
       classLinks: [
