@@ -26,9 +26,6 @@ export interface IThemeType {
     dropdown: {
       backgroundColor: string;
     };
-    icons: {
-      backgroundColor: string;
-    };
   };
   font: {
     sizes: {

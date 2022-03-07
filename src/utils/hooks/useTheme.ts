@@ -14,9 +14,6 @@ export const useTheme = () => {
       dropdown: {
         backgroundColor: "",
       },
-      icons: {
-        backgroundColor: "",
-      },
     },
     font: {
       sizes: {

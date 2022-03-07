@@ -10,9 +10,6 @@ export const USER_PREFERENCE = {
       backgroundColor: "#F5F7F8",
       lineColor: "#DADEE0",
     },
-    icons: {
-      backgroundColor: "#263238",
-    },
   },
   font: {
     sizes: {
