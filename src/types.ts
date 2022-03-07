@@ -1,9 +1,17 @@
 export interface IClassicLinkType {
+  id: string;
   title: string;
   url: string;
 }
 
-export interface IShowsLinkType {
+export interface IShowLinkType {
+  id: string;
+  title: string;
+  events: Array<IShowLinkItemType>;
+}
+
+export interface IShowLinkItemType {
+  id: string;
   date: string;
   location: string;
   url: string;
@@ -11,8 +19,22 @@ export interface IShowsLinkType {
 }
 
 export interface IMusicLinkType {
+  id: string;
+  title: string;
+  platforms: Array<IMusicLinkItemType>;
+}
+
+export interface IMusicLinkItemType {
+  id: string;
   name: string;
   url: string;
+}
+
+export interface IProfileType {
+  id: string;
+  userName: string;
+  avatar: string;
+  theme: IThemeType;
 }
 
 export interface IThemeType {
@@ -38,10 +60,9 @@ export interface IThemeType {
   };
 }
 
-export interface IProfileType {
-  name: string;
-  avatar: string;
+export interface ILinkType {
+  userId: string;
   classLinks: Array<IClassicLinkType>;
-  showsLinks: Array<IShowsLinkType>;
+  showsLinks: Array<IShowLinkType>;
   musicLinks: Array<IMusicLinkType>;
 }

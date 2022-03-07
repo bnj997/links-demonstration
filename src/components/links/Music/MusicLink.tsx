@@ -1,17 +1,21 @@
 import React, { useState } from "react";
-import { IMusicLinkType } from "../../../types";
+import { IMusicLinkItemType } from "../../../types";
 import LinkWrapper from "../../layouts/wrappers/LinkWrapper/LinkWrapper";
 import { DropdownMenu } from "../../layouts/wrappers/DropdownWrapper/DropdownWrapper.styles";
-import MusicItemLink from "./MusicItemLink";
+import MusicItemLink from "./MusicLinkItem";
 import AudioPlayer from "./AudioPlayer";
 
 interface IMusicLinkProps {
-  items: IMusicLinkType[];
+  platforms: IMusicLinkItemType[];
   onClick: () => void;
   isOpen: boolean;
 }
 
-const MusicLink: React.FC<IMusicLinkProps> = ({ items, onClick, isOpen }) => {
+const MusicLink: React.FC<IMusicLinkProps> = ({
+  platforms,
+  onClick,
+  isOpen,
+}) => {
   const [currentPlayer, setCurrentPlayer] = useState("");
 
   const handleClickLink = (platform: string) => {
@@ -29,11 +33,11 @@ const MusicLink: React.FC<IMusicLinkProps> = ({ items, onClick, isOpen }) => {
       {isOpen && (
         <DropdownMenu>
           {currentPlayer !== "" && <AudioPlayer platform={currentPlayer} />}
-          {items.map((platform, i) => {
+          {platforms.map((platform, i) => {
             return (
               <MusicItemLink
                 key={i}
-                data={platform}
+                platform={platform}
                 onClickLink={(platform) => handleClickLink(platform)}
               />
             );

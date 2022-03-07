@@ -1,14 +1,28 @@
 import { ThemeProvider } from "styled-components";
-import { useTheme } from "./utils/hooks/useTheme";
 import React from "react";
 import ProfilePage from "./views/Profile/ProfilePage";
+import { useFetchProfile } from "./utils/hooks/useFetchProfile";
 
 const App: React.FC<{}> = () => {
-  const { theme, error } = useTheme();
+  const { data, error } = useFetchProfile();
+
+  /**
+   * @todo Use an actual loading icon.
+   */
+  if (!data) {
+    return <h1>Loading...</h1>;
+  }
+
+  /**
+   * @todo Make an actual error component so it looks a bit cleaner
+   */
+  if (error) {
+    return <h1>Error</h1>;
+  }
 
   return (
-    <ThemeProvider theme={theme}>
-      <ProfilePage />
+    <ThemeProvider theme={data.theme}>
+      <ProfilePage profile={data} />
     </ThemeProvider>
   );
 };

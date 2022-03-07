@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import FlexWrapper from "../../components/layouts/wrappers/FlexWrapper/FlexWrapper";
 import ClassicLink from "../../components/links/Classic/ClassicLink";
 import MusicLink from "../../components/links/Music/MusicLink";
-import ShowsLink from "../../components/links/Shows/ShowsLink";
+import ShowsLink from "../../components/links/Shows/ShowLink";
 import Avatar from "../../components/profile/Avatar";
-import { useFetchProfile } from "../../utils/hooks/useFetchProfile";
 import { ReactComponent as LinktreeLogo } from "../../assets/logo.svg";
+import { useLinks } from "../../utils/hooks/useLinks";
+import { IProfileType } from "../../types";
 
-const ProfilePage: React.FC<{}> = () => {
-  const { data, error } = useFetchProfile();
+interface IProfilePageProps {
+  profile: IProfileType;
+}
+
+const ProfilePage: React.FC<IProfilePageProps> = ({ profile }) => {
+  const { links, error } = useLinks();
   const [openedDropdown, setOpenedDropdown] = useState("");
 
   const handlePress = (type: string) => {
@@ -22,7 +27,7 @@ const ProfilePage: React.FC<{}> = () => {
   /**
    * @todo Use an actual loading icon.
    */
-  if (!data) {
+  if (!links) {
     return <h1>Loading...</h1>;
   }
 
@@ -35,20 +40,26 @@ const ProfilePage: React.FC<{}> = () => {
 
   return (
     <FlexWrapper direction="column" justify="space-between">
-      <Avatar name={data.name} avatar={data.avatar} />
-      <ShowsLink
-        items={data.showsLinks}
-        onClick={() => handlePress("shows")}
-        isOpen={openedDropdown === "shows"}
-      />
-      <MusicLink
-        items={data.musicLinks}
-        onClick={() => handlePress("music")}
-        isOpen={openedDropdown === "music"}
-      />
-      {data.classLinks.map((link, i) => {
-        return <ClassicLink key={i} data={link} />;
-      })}
+      <Avatar name={profile.userName} avatar={profile.avatar} />
+      {links.showsLinks.map((showLink) => (
+        <ShowsLink
+          key={showLink.id}
+          events={showLink.events}
+          onClick={() => handlePress("shows")}
+          isOpen={openedDropdown === "shows"}
+        />
+      ))}
+      {links.musicLinks.map((musicLink) => (
+        <MusicLink
+          key={musicLink.id}
+          platforms={musicLink.platforms}
+          onClick={() => handlePress("music")}
+          isOpen={openedDropdown === "music"}
+        />
+      ))}
+      {links.classLinks.map((classicLink) => (
+        <ClassicLink key={classicLink.id} data={classicLink} />
+      ))}
       <LinktreeLogo style={{ margin: "5em" }} />
     </FlexWrapper>
   );
