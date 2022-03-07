@@ -23,7 +23,7 @@ To run the test cases, execute the command:
 
 ## Design/Architecture Considerations
 
-To enhance the scalability of the project, my file structure is composed of assets, components, utils, and views.
+To enhance the scalability of the project, my folder structure is composed of assets, components, utils, and views.
 
 - Assets
   - Stores all the provided assets for use.
@@ -31,7 +31,7 @@ To enhance the scalability of the project, my file structure is composed of asse
   - Stores all the individual components.
   - It is further broken down into files for each component to store styles, test cases, and the component itself.
   - If Storybook is used, those stories (eg.`Title.stories.tsx`) can be added in the component's file as well.
-  - Ultimately, this structure ensures that each file relevant to a component stay in one file to improve readability as more components are added.
+  - Ultimately, this structure ensures that each file relevant to a component stay in one folder to improve readability as more components are added.
 - Utils
   - Stores all the helper code I need such as mock data and custom hooks.
   - These hooks were used to 'simulate' a real API call to mimic real-world usage - may have been easier to just pass in the data as a prop to the component in hindsight.
