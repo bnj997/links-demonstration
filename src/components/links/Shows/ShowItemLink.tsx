@@ -27,7 +27,7 @@ const ShowsItemLink: React.FC<IShowsItemLinkProps> = ({ data }) => {
         {isSoldOut ? (
           <Subtitle text="Sold out" />
         ) : (
-          <ArrowIcon style={{ transform: "rotate(270deg)" }} role="link" />
+          <ArrowIcon style={{ transform: "rotate(270deg)" }} />
         )}
       </FlexWrapper>
     </ShowLinkContainer>
