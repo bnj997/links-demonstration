@@ -14,12 +14,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 To start the project, just run:
 
-1. `npm install`
-2. `npm start`
+1. `npm install` / `yarn install`
+2. `npm start`  / `yarn start`
 3. Open and view the project on `localhost:3000`
 
 To run the test cases, execute the command:
-`npm test`
+`npm test` / `yarn test`
 
 ## Design/Architecture Considerations
 
