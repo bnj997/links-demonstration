@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import FlexWrapper from "../../components/layouts/wrappers/FlexWrapper/FlexWrapper";
 import ClassicLink from "../../components/links/Classic/ClassicLink";
+import ShowsLink from "../../components/links/Shows/ShowsLink";
 import { useFetchProfile } from "../../utils/hooks/useFetchProfile";
 
 const ProfilePage: React.FC<{}> = () => {
   const { data, error } = useFetchProfile();
+  const [openedDropdown, setOpenedDropdown] = useState("");
+
+  const handlePress = (type: string) => {
+    if (openedDropdown === type) {
+      setOpenedDropdown("");
+    } else {
+      setOpenedDropdown(type);
+    }
+  };
 
   /**
    * @todo Use an actual loading icon.
@@ -22,6 +32,11 @@ const ProfilePage: React.FC<{}> = () => {
 
   return (
     <FlexWrapper direction="column" justify="space-between">
+      <ShowsLink
+        items={data.showsLinks}
+        onClick={() => handlePress("shows")}
+        isOpen={openedDropdown === "shows"}
+      />
       {data.classLinks.map((link, i) => {
         return <ClassicLink key={i} data={link} />;
       })}
