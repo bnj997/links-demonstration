@@ -5,6 +5,7 @@ import MusicLink from "../../components/links/Music/MusicLink";
 import ShowsLink from "../../components/links/Shows/ShowsLink";
 import Avatar from "../../components/profile/Avatar";
 import { useFetchProfile } from "../../utils/hooks/useFetchProfile";
+import { ReactComponent as LinktreeLogo } from "../../assets/logo.svg";
 
 const ProfilePage: React.FC<{}> = () => {
   const { data, error } = useFetchProfile();
@@ -48,6 +49,7 @@ const ProfilePage: React.FC<{}> = () => {
       {data.classLinks.map((link, i) => {
         return <ClassicLink key={i} data={link} />;
       })}
+      <LinktreeLogo style={{ margin: "5em" }} />
     </FlexWrapper>
   );
 };
