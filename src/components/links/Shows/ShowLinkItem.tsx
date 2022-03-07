@@ -1,17 +1,17 @@
 import React from "react";
 import FlexWrapper from "../../layouts/wrappers/FlexWrapper/FlexWrapper";
 import { ReactComponent as ArrowIcon } from "../../../assets/icons/arrow.svg";
-import { ShowLinkContainer } from "./ShowItemLink.styles";
+import { ShowLinkContainer } from "./ShowLinkItem.styles";
 import Title from "../../text/Title/Title";
 import Subtitle from "../../text/Subtitle/Subtitle";
-import { IShowsLinkType } from "../../../types";
+import { IShowLinkItemType } from "../../../types";
 
-interface IShowsItemLinkProps {
-  data: IShowsLinkType;
+interface IShowLinkItemProps {
+  event: IShowLinkItemType;
 }
 
-const ShowsItemLink: React.FC<IShowsItemLinkProps> = ({ data }) => {
-  const { url, date, location, isSoldOut } = data;
+const ShowsItemLink: React.FC<IShowLinkItemProps> = ({ event }) => {
+  const { url, date, location, isSoldOut } = event;
 
   return (
     <ShowLinkContainer

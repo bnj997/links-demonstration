@@ -8,20 +8,20 @@ import { ReactComponent as DeezerIcon } from "../../../assets/icons/deezer.svg";
 import { ReactComponent as TidalIcon } from "../../../assets/icons/tidal.svg";
 import { ReactComponent as BandcampIcon } from "../../../assets/icons/bandcamp.svg";
 import { ReactComponent as ArrowIcon } from "../../../assets/icons/arrow.svg";
-import { MusicLinkContainer, PlatformContainer } from "./MusicItemLink.styles";
+import { MusicLinkContainer, PlatformContainer } from "./MusicLinkItem.styles";
 import Title from "../../text/Title/Title";
-import { IMusicLinkType } from "../../../types";
+import { IMusicLinkItemType } from "../../../types";
 
-interface IMusicItemLinkProps {
-  data: IMusicLinkType;
+interface IMusicLinkItemProps {
+  platform: IMusicLinkItemType;
   onClickLink: (arg: string) => void;
 }
 
-const MusicItemLink: React.FC<IMusicItemLinkProps> = ({
-  data,
+const MusicItemLink: React.FC<IMusicLinkItemProps> = ({
+  platform,
   onClickLink,
 }) => {
-  const { name, url } = data;
+  const { name, url } = platform;
 
   const handleLogoClick = () => {
     window.open(url);
