@@ -7,7 +7,7 @@ export interface IClassicLinkType {
 export interface IShowLinkType {
   id: string;
   title: string;
-  events: Array<IShowLinkItemType>;
+  events: IShowLinkItemType[];
 }
 
 export interface IShowLinkItemType {
@@ -21,7 +21,7 @@ export interface IShowLinkItemType {
 export interface IMusicLinkType {
   id: string;
   title: string;
-  platforms: Array<IMusicLinkItemType>;
+  platforms: IMusicLinkItemType[];
 }
 
 export interface IMusicLinkItemType {
@@ -62,7 +62,7 @@ export interface IThemeType {
 
 export interface ILinkType {
   userId: string;
-  classLinks: Array<IClassicLinkType>;
-  showsLinks: Array<IShowLinkType>;
-  musicLinks: Array<IMusicLinkType>;
+  classLinks: IClassicLinkType[];
+  showsLinks: IShowLinkType[];
+  musicLinks: IMusicLinkType[];
 }
