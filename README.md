@@ -1,4 +1,4 @@
-# Linktree Clone
+# Links Demonstration
 
 This application showcases the UI and functionality of three new link types: Classic, Music Player, and Shows List.
 
@@ -8,7 +8,7 @@ The Music Player should open up a dropdown with a list of music platforms and th
 
 The Shows List should open up a dropdown with the show timings and these can be clicked to view the show on the event website.
 
-This Linktree project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Steps to run
 
@@ -26,7 +26,7 @@ To run the test cases, execute the command:
 To enhance the scalability of the project, my file structure is composed of assets, components, utils, and views.
 
 - Assets
-  - Stores all the provided Linktree assets for use.
+  - Stores all the provided assets for use.
 - Components
   - Stores all the individual components.
   - It is further broken down into files for each component to store styles, test cases, and the component itself.
