@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+# Linktree Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application showcases the UI and functionality of three new link types: Classic, Music Player anmd Shows List.
 
-## Available Scripts
+The Classic link should open up a new URL on click.
 
-In the project directory, you can run:
+The Music Player should open up a dropdown with a list of music platforms and these can be clicked to run the audio player/view the song on the platform website.
+
+The Shows List should open up a dropdown with the show timings and these can be clicked to view the show on the event website.
+
+This linktree project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Scripts
+
+To start the project, just run:
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To run the test cases, execute the command:
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Design Considerations
 
-### `yarn build`
+To enhance reusability of components, my file structure is composed of assets, components, utils and views.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- assets -> stores all the provided linktree assets for use
+- components -> stores all the indivivual components. It is further broken down into files for each component to store styles, test cases and the component itself.
+- utils -> stores all the helper code I need such as mock api responses and hooks
+- views -> the pages itself. In this case, it would just be the Profile page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## with more time
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+TBD
