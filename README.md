@@ -49,7 +49,7 @@ With more time, I would focus on the following caveats currently in the project:
 
 - Ordering of links
 
-  Due to time constraints, the order of links is fixed in the order of Show links, Music links, and Classic links. To address this, The `ProfilePage.tsx` should not hard code the rendering order. Instead, it should render links based on either 1. the order set by the mock API or 2. a custom order set by the user itself (done on the front end or back end).
+  Due to time constraints, the order of links is fixed in the order of Show links, Music links, and Classic links. To address this, The `ProfilePage.tsx` should not hard-code the rendering order of links. Instead, it should render links based on either 1. the order set by the mock API or 2. a custom order set by the user itself (done on the front end or back end).
 
   If time permitted, a 'neater' solution would have been to assume that the 'links' response object returned all links in one array rather than have it returned categorically and to have a 'type' property to check if the link is a show, music or classic link.
 
