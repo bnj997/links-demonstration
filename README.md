@@ -47,9 +47,22 @@ Some of the components developed may also appear a bit redundant (eg. the `Title
 
 With more time, I would focus on the following caveats currently in the project:
 
-- Imports
+- Import Statements
 
-  Rather than using direct file paths, it may be better to use aliases so files can be imported as `@components` to prevent long-winded import statements.
+  Rather than using direct file paths, it may be better to use aliases so files can be imported as `@components` to prevent long-winded import statements in files which is error prone to refactors.
+  
+  ```
+  module.exports = {
+    extensions: ['ts'],
+    resolve: {
+      alias: {
+        @components: path.resolve(__dirname, 'src/components/'),
+        @assets: path.resolve(__dirname, 'src/assets/'),
+      },
+    },
+  };
+  ```
+
 
 - Ordering of links
 
