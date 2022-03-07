@@ -43,9 +43,9 @@ As the project scales, it may be useful to add another folder such as 'stores' f
 
 Some of the components developed may also appear a bit redundant (eg. the `Title.tsx` does not need to exist since we can just rely on the `Title.styles.ts` file for any headings). However, this was done because in the future, further customisation of a component may be required (eg. passing in classes as props).
 
-## with more time
+## With More Time
 
-With more time, I would focus on the following caveats currently in the project:
+I would focus on the following caveats currently in the project:
 
 - Import Statements
 
