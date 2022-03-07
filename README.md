@@ -26,12 +26,12 @@ To run the test cases, execute the command:
 To enhance the scalability of the project, my file structure is composed of assets, components, utils, and views.
 
 - Assets
-  - Stores all the provided Linktree assets for use
+  - Stores all the provided Linktree assets for use.
 - Components
   - Stores all the individual components.
   - It is further broken down into files for each component to store styles, test cases, and the component itself.
   - If Storybook is used, those can be added in the component as well.
-  - Ultimately, this structure ensures that each file relevant to a component stay in one location to improve readability as more components are added
+  - Ultimately, this structure ensures that each file relevant to a component stay in one location to improve readability as more components are added.
 - Utils
   - Stores all the helper code I need such as mock data and custom hooks.
   - These hooks were used to 'simulate' a real API call to mimic real-world usage.
@@ -65,6 +65,6 @@ With more time, I would focus on the following caveats currently in the project:
 
 - Testing
 
-  Because of the requirement that: "if one link is open, all others must close", the parent component `ProfilePage.tsx` currently handles the `isOpen` state of all links. To run the required test cases, the `ProfilePage.tsx` was rendered rather than the actual link component themselves. In addition, I also mocked the return value of the `useLinks()` call to prevent the async promise from running and to prevent the "...loading" text to be rendered.
+  Because of the requirement that: "if one link is open, all others must close", the parent component `ProfilePage.tsx` currently handles the `isOpen` state of all links. To run the required test cases, the `ProfilePage.tsx` was rendered rather than the actual link component themselves. In addition, I also mocked the return value of the `useLinks()` call to prevent the async promise from running and to prevent the "...loading" text to be rendered instead of the actual links.
 
   Given more time, more testing should be provided with a focus on testing the link component themselves.
