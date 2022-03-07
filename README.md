@@ -49,7 +49,7 @@ With more time, I would focus on the following caveats currently in the project:
 
 - Import Statements
 
-  Rather than using direct file paths, it may be better to use aliases so files can be imported as `@components` to prevent long-winded import statements in files which is error prone to refactors.
+  Rather than using direct file paths, it may have been better to use aliases so files can be imported as `@components` to prevent long-winded import statements is error prone.
   
   ```
   module.exports = {
@@ -88,6 +88,6 @@ With more time, I would focus on the following caveats currently in the project:
 
 - Styling
 
-  I used the Figma as a guide and it is important to note I did not follow the exact specifications (eg. height and widths were not hard-coded with pixel values). This is because I wanted to make the app as responsive as possible given the time constraints. 
+  I used the Figma as a guide and it is important to note I did not follow the exact specifications (eg. height and widths of components were not hard-coded with pixel values). This is because I wanted to make the app as responsive as possible given the time constraints. 
 
   With more time, I would have addressed small styling issues such as the logo not being appended to bottom of page.
