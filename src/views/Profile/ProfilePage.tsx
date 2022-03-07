@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FlexWrapper from "../../components/layouts/wrappers/FlexWrapper/FlexWrapper";
 import ClassicLink from "../../components/links/Classic/ClassicLink";
+import MusicLink from "../../components/links/Music/MusicLink";
 import ShowsLink from "../../components/links/Shows/ShowsLink";
 import { useFetchProfile } from "../../utils/hooks/useFetchProfile";
 
@@ -36,6 +37,11 @@ const ProfilePage: React.FC<{}> = () => {
         items={data.showsLinks}
         onClick={() => handlePress("shows")}
         isOpen={openedDropdown === "shows"}
+      />
+      <MusicLink
+        items={data.musicLinks}
+        onClick={() => handlePress("music")}
+        isOpen={openedDropdown === "music"}
       />
       {data.classLinks.map((link, i) => {
         return <ClassicLink key={i} data={link} />;
